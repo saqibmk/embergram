@@ -16,6 +16,7 @@ export default Ember.Route.extend({
         auth.createUserWithEmailAndPassword(email, password)
             .then((createdUser) => {
               console.log(createdUser);
+              
             });
     }
   }
