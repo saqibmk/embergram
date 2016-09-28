@@ -2,7 +2,8 @@ import DS from 'ember-data';
 
 let {
   Model,
-  attr
+  attr,
+  hasMany
 } = DS;
 
 export default Model.extend({
@@ -10,5 +11,6 @@ export default Model.extend({
   email: attr('string'),
   name: attr('string'),
   dob: attr('date'),
-  gender: attr('string')
+  gender: attr('string'),
+  posts: hasMany('post')
 });
