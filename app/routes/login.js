@@ -12,9 +12,9 @@ export default Ember.Route.extend({
         email: email,
         password: password
       }).then(function(data){
-
+        console.log(data);
       }).catch(function(err){
-        console.log(err)
+        console.log(err);
       });
     }
   }
