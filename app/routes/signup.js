@@ -21,7 +21,13 @@ export default Ember.Route.extend({
                             dob: dob,
                             gender: gender
                           });
-                newUser.save();          
+                newUser.save();
+                controller.set('email', null);
+                controller.set('password', null);
+                controller.set('name', null);
+                controller.set('dob', null);
+                controller.set('gender', null);
+                controller.transitionToRoute('feed');       
             }).catch((error) => {
               console.log(error);
             });
