@@ -1,4 +1,4 @@
-import DS from 'ember-data'
+import DS from 'ember-data';
 
 let {
   Model,
@@ -11,4 +11,4 @@ export default Model.extend({
   name: attr('string'),
   dob: attr('date'),
   gender: attr('string')
-})
+});
