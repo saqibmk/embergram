@@ -1,7 +1,5 @@
 import Ember from 'ember';
-
 const {get} = Ember;
-
 export default Ember.Route.extend({
   firebaseApp: Ember.inject.service(),
   actions: {
@@ -9,14 +7,23 @@ export default Ember.Route.extend({
         var controller = get(this, 'controller');
         var email = controller.get('email');
         var password = controller.get('password');
-        // var name = controller.get('name');
-        // var dob = controller.get('dob');
-        // var gender = controller.get('gender');
+        var name = controller.get('name');
+        var dob = controller.get('dob');
+        var gender = controller.get('gender');
         const auth = get(this, 'firebaseApp').auth();
         auth.createUserWithEmailAndPassword(email, password)
             .then((createdUser) => {
               console.log(createdUser);
-              
+                var newUser = this.store.createRecord('user', {
+                            uid: createdUser.uid,
+                            email: email,
+                            name: name,
+                            dob: dob,
+                            gender: gender
+                          });
+                newUser.save();          
+            }).catch((error) => {
+              console.log(error);
             });
     }
   }
