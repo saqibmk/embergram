@@ -8,7 +8,7 @@ export default Ember.Route.extend({
         var email = controller.get('email');
         var password = controller.get('password');
         var name = controller.get('name');
-        var dob = controller.get('dob');
+        var dob = new Date(controller.get('dob'));
         var gender = controller.get('gender');
         const auth = get(this, 'firebaseApp').auth();
         auth.createUserWithEmailAndPassword(email, password)
@@ -27,7 +27,7 @@ export default Ember.Route.extend({
                 controller.set('name', null);
                 controller.set('dob', null);
                 controller.set('gender', null);
-                controller.transitionToRoute('feed');       
+                controller.transitionToRoute('feed');
             }).catch((error) => {
               console.log(error);
             });

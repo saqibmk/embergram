@@ -15,6 +15,7 @@ Router.map(function() {
     this.route('new');
   });
   this.route('message');
+  this.route('profile');
 });
 
 export default Router;

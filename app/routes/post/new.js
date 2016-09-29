@@ -8,10 +8,9 @@ export default Ember.Route.extend({
         imageURL: 'http://www.helpinghomelesscats.com/images/cat1.jpg',
         caption: postTitle
       });
-      console.log(uid)
       this.store.query('user', {orderBy: 'uid', equalTo: uid }).then((records) => {
         let user = records.get('firstObject');
-          console.log(user.get('email'))
+          console.log(user.get('email'));
           user.get('posts').addObject(post);
           post.save().then(()=> {
             return user.save();

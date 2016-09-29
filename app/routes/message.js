@@ -27,8 +27,8 @@ export default Ember.Route.extend({
         });
 
         message.save().then(()=> {
-          alert('Message Sent')
-        })
+          alert('Message Sent');
+        });
 
       });
 

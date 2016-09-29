@@ -1,0 +1,20 @@
+<h1>Profile</h1>
+{{#if isEditing}}
+  <div class='col-md-4 border'>
+      <form {{action 'save' post on='submit'}}>
+            <input type="text" value={{model.name}}/><br>
+            <input type="date" value={{model.dob}} /><br>
+            <input type="text" value={{model.gender}}/><br>
+          <div class = 'row'>
+              <button type='submit' class = 'btn btn-primary'>Done</button>
+          </div>
+      </form>
+  </div>
+{{/if}}
+<div class='col-md-4 border'>
+  Name: {{model.name}} <br>
+  Date of Birth: {{model.dob}} <br>
+  Gender: {{model.gender}} <br>
+</div>
+<br>
+<button {{action "edit"}}> Edit Profile </button><br>
