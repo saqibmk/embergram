@@ -1,0 +1,9 @@
+#videoElement {
+  width: 150px;
+  height: 150px;
+}
+
+#canvasCapture{
+  width: 350px;
+  height: 150px;
+}

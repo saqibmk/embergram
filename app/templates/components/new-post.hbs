@@ -1,1 +1,10 @@
+{{yield}}
 <h1> Add new Post </h1>
+<video autoplay="true" id="videoElement">
+</video>
+<br>
+<button {{action "capture"}}> Capture </button><br>
+
+<canvas id="canvasCapture"></canvas>
+{{input type="text" value=postTitle placeholder="Title"}}<br>
+<button {{action "save"}}> Upload </button><br>
