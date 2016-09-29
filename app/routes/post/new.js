@@ -4,8 +4,6 @@ export default Ember.Route.extend({
   actions: {
     createPost(postTitle){
       let uid = get(this, 'session.uid');
-      console.log(uid);
-      console.log(postTitle);
       let post = this.store.createRecord('post', {
         imageURL: 'http://www.helpinghomelesscats.com/images/cat1.jpg',
         caption: postTitle

@@ -12,7 +12,6 @@ function handleVideo(stream) {
 
 }
 
-
 function snapshot() {
   var canvas = document.querySelector('#canvasCapture');
   var video = document.querySelector("#videoElement");
