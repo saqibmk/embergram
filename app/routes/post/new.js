@@ -9,18 +9,18 @@ export default Ember.Route.extend({
       let post = this.store.createRecord('post', {
         imageURL: 'http://www.helpinghomelesscats.com/images/cat1.jpg',
         caption: postTitle
-      })
+      });
 
       this.store.query('user', {orderBy: 'uid', equalTo: uid }).then((records) => {
         let user = records.get('firstObject');
 
-          user.get('posts').addObject(post)
+          user.get('posts').addObject(post);
           post.save().then(()=> {
             return user.save();
-          })
+          });
 
-          this.transitionTo('feed')
-      })
+          this.transitionTo('feed');
+      });
 
 
     }

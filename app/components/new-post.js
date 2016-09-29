@@ -1,10 +1,14 @@
 import Ember from 'ember';
 const {get} = Ember;
+
+var _stream;
+
 function handleVideo(stream) {
   var video = document.querySelector("#videoElement");
   console.log(video.clientHeight, video.clientWidth);
   // video.addEventListener('click', snapshot(stream, video), false);
   video.src = window.URL.createObjectURL(stream);
+  _stream = stream;
 
 }
 
@@ -36,8 +40,9 @@ export default Ember.Component.extend({
     }
   },
   willDestroyElement: function () {
-  var video = document.querySelector("#videoElement");
-  video.src = null;
+    //var video = document.querySelector("#videoElement");
+    //video.src = null;
+    _stream.getTracks()[0].stop();
 }
 });
 
