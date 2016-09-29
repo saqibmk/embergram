@@ -14,6 +14,7 @@ Router.map(function() {
   this.route('post', function() {
     this.route('new');
   });
+  this.route('message');
 });
 
 export default Router;

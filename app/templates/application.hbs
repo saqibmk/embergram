@@ -7,7 +7,7 @@
                     {{#if session.isAuthenticated}}
                         <li>{{#link-to 'feed'}}Feed{{/link-to}}</li>
                         <li>{{#link-to 'post.new'}}Post{{/link-to}}</li>
-                        <li>{{#link-to 'feed'}}Messages{{/link-to}}</li>
+                        <li>{{#link-to 'message'}}Messages{{/link-to}}</li>
                     {{/if}}
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
@@ -19,6 +19,6 @@
                 </ul>
         </div>
 </nav>
-<div class='container'>
+<div class='container' id='main'>
 {{outlet}}
 </div>
