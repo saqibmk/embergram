@@ -9,13 +9,13 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route('login');
   this.route('signup');
-  this.route('feed');
+  this.authenticatedRoute('feed');
 
   this.route('post', function() {
     this.route('new');
   });
-  this.route('message');
-  this.route('profile');
+  this.authenticatedRoute('message');
+  this.authenticatedRoute('profile');
 });
 
 export default Router;

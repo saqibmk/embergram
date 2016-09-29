@@ -1,6 +1,12 @@
 import Ember from 'ember';
 const {get} = Ember;
 export default Ember.Route.extend({
+  beforeModel(){
+    let session = this.get('session');
+    if(!session.get('isAuthenticated')){
+      this.transitionTo('login');
+    }
+  },
   actions: {
     createPost(postTitle){
       let uid = get(this, 'session.uid');
@@ -18,8 +24,9 @@ export default Ember.Route.extend({
 
           this.transitionTo('feed');
       });
-
-
+    },
+    accessDenied() {
+      return this.transitionTo('login');
     }
   }
 });

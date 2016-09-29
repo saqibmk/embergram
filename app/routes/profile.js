@@ -14,6 +14,9 @@ export default Ember.Route.extend({
   actions: {
     edit(){
       set(this, 'isEditing', true);
+    },
+    accessDenied() {
+      return this.transitionTo('login');
     }
   }
 });

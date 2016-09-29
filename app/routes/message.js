@@ -31,8 +31,9 @@ export default Ember.Route.extend({
         });
 
       });
-
-
+    },
+    accessDenied() {
+      return this.transitionTo('login');
     }
   }
 });
